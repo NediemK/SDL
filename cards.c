@@ -113,7 +113,7 @@ void manageCards (Game* game) {
             printf("Well Done!\n");
             game->currentLevel = 2;
             game->currentMenu = LEVELTHREE;
-            game->character.spritePos.x = 0;
+            game->character->spritePos.x = 0;
         } else {
             for (int i=0; i<10; i++) {
                 game->cards.card[i].state = 1;

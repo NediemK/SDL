@@ -186,3 +186,12 @@ void handleMouseButtonDownSettingsMenu(Game* game) {
 void handleMouseButtonUpSettingsMenu(Game* game) {
   // data
 }
+
+int collisionBB(MC m, Entity e) {
+  int ew = e.spriteSheet[e.direction][e.state][e.currentSprite]->w;
+  int eh = e.spriteSheet[e.direction][e.state][e.currentSprite]->h;
+
+  int xCollision = m.pos.x > e.spritePos.x + ew || m.pos.x + m.img[0]->w < e.spritePos.x;
+  int yCollision = m.pos.y > e.spritePos.y + eh || m.pos.y + m.img[0]->h < e.spritePos.y;
+  return !(xCollision || yCollision);
+}
